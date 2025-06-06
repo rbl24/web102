@@ -1,19 +1,24 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+  // useEffect(() => {
+  //   document.documentElement.setAttribute('data-theme', 'coffee');
+  // }, []);
+
+  
   let names = [
     'Anna Chen', 
     'Henry Wang', 
     'Adam	Reimer', 
     'Ryan	Liu', 
     'Maggie	Fan',
-    'Vivek	Yang',
-    'Cathy	Kuo',
-    'Gabby	Wang',
+    'Vivek Yang',
+    'Cathy Kuo',
+    'Gabby Wang',
     'Kyle	Peng',
     'Alaina	Liu',
-    'Sabrina	Li'
+    'Sabrina Li'
   ]
   let positions = [
     'President', 
@@ -27,6 +32,19 @@ function App() {
     'Outreach', 
     'Co-Membership', 
     'Co-Membership'
+  ]
+  let images = [
+    'https://org.osu.edu/tasa/files/2024/05/Anna1.jpg',
+    'https://org.osu.edu/tasa/files/2025/05/Henry1.jpg',
+    'https://org.osu.edu/tasa/files/2024/05/13D41165-1CF5-4193-97B8-2BB46E4FCF1C.jpg',
+    'https://org.osu.edu/tasa/files/2024/05/Ryan2.jpg',
+    'https://org.osu.edu/tasa/files/2025/05/Maggie1.jpeg',
+    'https://org.osu.edu/tasa/files/2025/05/Vivek1-e1748212268581.jpg',
+    'https://org.osu.edu/tasa/files/2025/05/Cathy1.jpeg',
+    'https://org.osu.edu/tasa/files/2025/05/Gabby1.jpg',
+    'https://org.osu.edu/tasa/files/2025/05/Kyle1-1.jpg',
+    'https://org.osu.edu/tasa/files/2025/05/Alaina1-1.jpeg',
+    'https://org.osu.edu/tasa/files/2025/05/20250514_143320_17CC65.jpeg'
   ]
   let hobby1 = [
     'Boba Lover', 
@@ -57,7 +75,7 @@ function App() {
   const members = names.map((name, index) => ({
     name: name,
     position: positions[index],
-    image: 'placeholder.jpg',         // Replace with real image URLs later
+    image: images[index],         // Replace with real image URLs later
     description: 'This is a placeholder description.',
     hobby1: hobby1[index],
     hobby2: hobby2[index],
@@ -65,16 +83,19 @@ function App() {
   const badgeType = ['badge-primary', 'badge-secondary', 'badge-accent'];
 
   return (
-    <div data-theme="cupcake" className='App'> 
+    <div data-theme="cupcake" className='App bg-base-200 p-8'> 
       <h2>TASA Eboard 2025-2026!</h2>
       <button className="btn btn-primary">Submit</button>
       <div className="card">
-        <h1 className="text-header">Device Info</h1>
+        <h1 className="text-2xl font-bold">Device Info</h1>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {
             members.map((member, index) => (
-              <div className = 'card bg-base-100 w-96 shadow-sm'>
+              <div 
+                key={index} 
+                className="card w-72 bg-base-100 shadow-md hover:shadow-xl transition duration-300 ease-in-out transform hover:scale-105"
+              >
                 <figure>
                   <img src={member.image} alt={member.name} />
                 </figure>
@@ -95,6 +116,7 @@ function App() {
       </div>
     </div>
   )
+  
 }
 
 export default App

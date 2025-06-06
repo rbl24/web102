@@ -2,8 +2,15 @@
 
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake;
-}
+} 
 
+.fade {
+  transition-behavior: normal;
+  transition-delay: 0s;
+  transition-duration: 0.15s;
+  transition-property: opacity;
+  transition-timing-function: linear;
+}
 
 /* #root {
   max-width: 1280px;
