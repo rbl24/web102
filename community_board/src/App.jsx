@@ -47,17 +47,17 @@ function App() {
     'https://org.osu.edu/tasa/files/2025/05/20250514_143320_17CC65.jpeg'
   ]
   let hobby1 = [
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover', 
-    'Boba Lover'
+    'Big Back', 
+    'Big Back', 
+    'Big Back', 
+    'Big Back', 
+    'Big Back', 
+    'Big Back', 
+    'Big Back', 
+    'Big Back', 
+    'Big Back', 
+    'Big Back', 
+    'Big Back'
   ]
   let hobby2 = [
     'Boba Lover', 
@@ -84,10 +84,8 @@ function App() {
 
   return (
     <div data-theme="cupcake" className='App bg-base-200 p-8'> 
-      <h2>TASA Eboard 2025-2026!</h2>
-      <button className="btn btn-primary">Submit</button>
-      <div className="card">
-        <h1 className="text-2xl font-bold">Device Info</h1>
+      <div className='mx-auto w-lg rounded-box mb-4 p-4 bg-primary text-primary-content'>
+        <h1 className="text-2xl text-center font-bold">TASA Eboard 2025-2026!</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {
