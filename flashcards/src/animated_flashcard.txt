@@ -1,0 +1,33 @@
+(
+          // --- Main game area when playing ---
+          <div className='flex flex-col justify-center items-center w-full [perspective:1000px]'>
+            <div
+              onClick={() => setFrontSide(!frontSide)}
+              className={`card w-[90vw] md:w-144 h-80 bg-transparent cursor-pointer relative transition-transform duration-700`}
+              style={{ transformStyle: 'preserve-3d', transform: frontSide ? 'rotateY(0deg)' : 'rotateY(180deg)' }}
+            >
+              {/* Card Front */}
+              <div className='card-body justify-center items-center text-center absolute w-full h-full backface-hidden bg-gray-700 rounded-lg shadow-xl'
+                   style={{ backfaceVisibility: 'hidden' }}>
+                <h2 className='text-4xl md:text-5xl'>{FLASHCARDS[currentIndex].front.hanzi}</h2>
+                <p className='text-neutral-400 text-lg md:text-xl mt-4'>{FLASHCARDS[currentIndex].front.pinyin}</p>
+              </div>
+
+              {/* Card Back */}
+              <div
+                className='card-body justify-center items-center text-center absolute w-full h-full bg-gray-800 rounded-lg shadow-xl'
+                style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
+              >
+                <h2 className='text-primary text-2xl md:text-3xl'>{FLASHCARDS[currentIndex].back.english}</h2>
+              </div>
+            </div>
+
+            {/* --- Controls --- */}
+            <button className="btn btn-primary btn-wide mt-8" onClick={handleNext}>
+              Next
+            </button>
+            <p className="text-sm text-neutral-500 mt-4">
+              Card {counter} of {numFlashcards}
+            </p>
+          </div>
+        )
