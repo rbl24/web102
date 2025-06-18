@@ -44,6 +44,8 @@ GIF created with ...
 
 ## Notes
 
+Note: the 'resource' is considered to be the team members on the team introduction page. So each member has their own card. 
+
 npm create vite@latest
 
 npm install tailwindcss @tailwindcss/vite

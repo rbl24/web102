@@ -8,17 +8,17 @@ function App() {
 
   
   let names = [
-    'Anna Chen', 
-    'Henry Wang', 
-    'Adam	Reimer', 
-    'Ryan	Liu', 
-    'Maggie	Fan',
-    'Vivek Yang',
-    'Cathy Kuo',
-    'Gabby Wang',
-    'Kyle	Peng',
-    'Alaina	Liu',
-    'Sabrina Li'
+    'Anna', 
+    'Henry', 
+    'Adam', 
+    'Ryan', 
+    'Maggie',
+    'Vivek',
+    'Cathy',
+    'Gabby',
+    'Kyle',
+    'Alaina',
+    'Sabrina'
   ]
   let positions = [
     'President', 
@@ -72,11 +72,25 @@ function App() {
     'Boba Lover', 
     'Boba Lover'
   ]
+
+  let descriptions = [
+    'So excited to be your president this year!', 
+    'I love meeting new people!', 
+    'I love to play video games!', 
+    'I love to play sports!', 
+    'I love taking pictures!', 
+    'I love going on walks!', 
+    'Talk to me about dancing!', 
+    'We will be best friends if you are a foodie!', 
+    'I like trying out new recipes!', 
+    'I like to explore cbus!', 
+    'I am open to trying new things, just ask me!'
+  ]
   const members = names.map((name, index) => ({
     name: name,
     position: positions[index],
     image: images[index],         // Replace with real image URLs later
-    description: 'This is a placeholder description.',
+    description: descriptions[index],
     hobby1: hobby1[index],
     hobby2: hobby2[index],
   }));
@@ -85,7 +99,8 @@ function App() {
   return (
     <div data-theme="cupcake" className='App bg-base-200 p-8'> 
       <div className='mx-auto w-lg rounded-box mb-4 p-4 bg-primary text-primary-content'>
-        <h1 className="text-2xl text-center font-bold">TASA Eboard 2025-2026!</h1>
+        <h1 className="text-2xl text-center font-bold">Theme: Club Organization Introductions</h1>
+        <h1 className="text-lg text-center font-bold">Information related to theme for 10 cards: Information related to the theme are the name, picture, and position of the members.</h1>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {
